@@ -131,8 +131,7 @@ wire [15:0] joy = joystick_0 | joystick_1;
 wire [21:0] gamma_bus;
 
 wire [15:0] joystick_0 = |status[31:30] ? {
-	joydb9md_1[8] | (joydb9md_1[7] & joydb9md_1[4]),// Coin -> 9 *  Mode or Start + B
-	joydb9md_1[11],// _start_2	-> 8 * Z (dummy)
+	joydb9md_1[8] | (joydb9md_1[7] & joydb9md_1[4]),// Coin -> 8 *  Mode or Start + B
 	joydb9md_1[7], // _start_1	-> 7 * Start
 	joydb9md_1[5], // btn_fireC	-> 6 * C
 	joydb9md_1[4], // btn_fireB	-> 5 * B
@@ -145,8 +144,7 @@ wire [15:0] joystick_0 = |status[31:30] ? {
 	: joystick_0_USB;
 
 wire [15:0] joystick_1 =  status[31]    ? {
-	joydb9md_2[8] | (joydb9md_2[7] & joydb9md_2[4]),// Coin -> 9 *  Mode or Start + B
-	joydb9md_2[11],// _start_2	-> 8 (dummy)
+	joydb9md_2[8] | (joydb9md_2[7] & joydb9md_2[4]),// Coin -> 8 *  Mode or Start + B
 	joydb9md_2[7], // _start_1	-> 7 * Start
 	joydb9md_2[5], // btn_fireC	-> 6 * C
 	joydb9md_2[4], // btn_fireB	-> 5 * B
